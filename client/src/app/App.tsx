@@ -1,11 +1,25 @@
-import NavBar from '../components/NavBar'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom'
+import Home from '../pages/Home'
+import Waize from '../pages/Waize'
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>Waize</h1>
-      <NavBar />
-    </div>
+    <>
+      <Router>
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route path='/waize'>
+            <Waize />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   )
 }
 
