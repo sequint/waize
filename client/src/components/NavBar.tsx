@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Box from '@mui/material/Box'
 import BottomNavigation from '@mui/material/BottomNavigation'
 import BottomNavigationAction from '@mui/material/BottomNavigationAction'
@@ -6,8 +7,9 @@ import CottageRounded from '@mui/icons-material/CottageRounded'
 import WavesRoundedIcon from '@mui/icons-material/WavesRounded'
 import './NavBar.css'
 
-export default function SimpleBottomNavigation() {
+const NavBar = () => {
   const [value, setValue] = useState(0)
+  const [linkClicked, setLinkClicked] = useState(false)
 
   return (
     <Box className="navBarAlign">
@@ -18,9 +20,15 @@ export default function SimpleBottomNavigation() {
           setValue(newValue)
         }}
       >
-        <BottomNavigationAction label="Home" icon={<CottageRounded />} />
-        <BottomNavigationAction label="Waize" icon={<WavesRoundedIcon />} />
+        <Link to='/'>
+          <BottomNavigationAction className="navLink" label="Home" icon={<CottageRounded />} />
+        </Link>
+        <Link to='/waize'>
+          <BottomNavigationAction className="navLink" label="Waize" icon={<WavesRoundedIcon />} />
+        </Link>
       </BottomNavigation>
     </Box>
   )
 }
+
+export default NavBar

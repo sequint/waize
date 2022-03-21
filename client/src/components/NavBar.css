@@ -3,3 +3,24 @@
   position: absolute;
   bottom: 0;
 }
+
+.navLink {
+  color: grey !important;
+  padding: 6px 60px 8px !important;
+}
+
+.navLinkClicked {
+  color: aquamarine !important;
+}
+
+.navLink::before {
+  box-sizing: inherit !important;
+}
+
+.navLink::after {
+  box-sizing: inherit !important;
+}
+
+.MuiBottomNavigationAction-label {
+  opacity: 1 !important;
+}
