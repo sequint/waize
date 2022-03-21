@@ -30,7 +30,7 @@ const NavBar: React.FC<navbar> = (props) => {
   }
 
   return (
-    <Box className="navBarAlign">
+    <Box className="navBarHolder">
       <BottomNavigation
         showLabels
         value={value}

@@ -1,8 +1,10 @@
-/* Position navbar at the bottom of the page */
-.navBarAlign {
+/* General custom styles for navbar */
+.navBarHolder {
   width: 100%;
   position: absolute;
   bottom: 0;
+  border-top: lightgrey solid 1px;
+  padding-top: 10px;
 }
 
 /* Style for active page link */
@@ -10,9 +12,11 @@
   color: blue !important;
   padding: 6px 60px 8px !important;
 }
+
 .activeLinkIcon::before {
   box-sizing: inherit !important;
 }
+
 .activeLinkIcon::after {
   box-sizing: inherit !important;
 }
@@ -22,9 +26,11 @@
   color: lightblue !important;
   padding: 6px 60px 8px !important;
 }
+
 .inactiveLinkIcon::before {
   box-sizing: inherit !important;
 }
+
 .inactiveLinkIcon::after {
   box-sizing: inherit !important;
 }
