@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom'
 import Home from '../pages/Home'
 import Waize from '../pages/Waize'
+import './App.css'
 
 const App = () => {
   return (
