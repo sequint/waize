@@ -1,26 +1,34 @@
+/* Position navbar at the bottom of the page */
 .navBarAlign {
   width: 100%;
   position: absolute;
   bottom: 0;
 }
 
-.navLink {
-  color: grey !important;
+/* Style for active page link */
+.activeLinkIcon {
+  color: blue !important;
   padding: 6px 60px 8px !important;
 }
-
-.navLinkClicked {
-  color: aquamarine !important;
+.activeLinkIcon::before {
+  box-sizing: inherit !important;
 }
-
-.navLink::before {
+.activeLinkIcon::after {
   box-sizing: inherit !important;
 }
 
-.navLink::after {
+/* Style for inactive page link */
+.inactiveLinkIcon {
+  color: lightblue !important;
+  padding: 6px 60px 8px !important;
+}
+.inactiveLinkIcon::before {
+  box-sizing: inherit !important;
+}
+.inactiveLinkIcon::after {
   box-sizing: inherit !important;
 }
 
-.MuiBottomNavigationAction-label {
+/* .MuiBottomNavigationAction-label {
   opacity: 1 !important;
-}
+} */
