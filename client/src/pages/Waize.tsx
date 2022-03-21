@@ -4,7 +4,7 @@ const Waize = () => {
   return (
     <>
       <h1>Waize</h1>
-      <NavBar />
+      <NavBar definedRoute='/waize' />
     </>
   )
 }
