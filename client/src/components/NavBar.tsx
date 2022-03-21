@@ -12,8 +12,22 @@ interface navbar {
   definedRoute: String
 }
 
-const NavBar: React.FC<navbar> = (definedRoute) => {
+const NavBar: React.FC<navbar> = (props) => {
   const [value, setValue] = useState(0)
+  console.log(props.definedRoute)
+
+  const updateIconClass = (icon: String) => {
+    // Return a class string depending on the icon and definedRoute
+    switch(icon) {
+      case 'home':
+        if (props.definedRoute === 'home') { return 'activeLinkIcon' }
+        else { return 'inactiveLinkIcon' }
+      case 'waize':
+        return props.definedRoute === 'waize' ? 'activeLinkIcon' : 'inactiveLinkIcon'
+      default:
+        return 'inactiveLinkIcon'
+    }
+  }
 
   return (
     <Box className="navBarAlign">
@@ -22,14 +36,13 @@ const NavBar: React.FC<navbar> = (definedRoute) => {
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue)
-          console.log(newValue)
         }}
       >
         <Link to='/'>
-          <BottomNavigationAction label="Home" icon={<CottageRounded />} />
+          <BottomNavigationAction className={updateIconClass('home')} label="Home" icon={<CottageRounded />} />
         </Link>
         <Link to='/waize'>
-          <BottomNavigationAction label="Waize" icon={<WavesRoundedIcon />} />
+          <BottomNavigationAction className={updateIconClass('waize')} label="Waize" icon={<WavesRoundedIcon />} />
         </Link>
         
       </BottomNavigation>
