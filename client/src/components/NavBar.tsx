@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import Box from '@mui/material/Box'
 import BottomNavigation from '@mui/material/BottomNavigation'
 import BottomNavigationAction from '@mui/material/BottomNavigationAction'
@@ -9,7 +8,6 @@ import './NavBar.css'
 
 const NavBar = () => {
   const [value, setValue] = useState(0)
-  const [linkClicked, setLinkClicked] = useState(false)
 
   return (
     <Box className="navBarAlign">
@@ -20,12 +18,8 @@ const NavBar = () => {
           setValue(newValue)
         }}
       >
-        <Link to='/'>
-          <BottomNavigationAction className="navLink" label="Home" icon={<CottageRounded />} />
-        </Link>
-        <Link to='/waize'>
-          <BottomNavigationAction className="navLink" label="Waize" icon={<WavesRoundedIcon />} />
-        </Link>
+        <BottomNavigationAction href='/' label="Home" icon={<CottageRounded />} />
+        <BottomNavigationAction href='/waize' label="Waize" icon={<WavesRoundedIcon />} />
       </BottomNavigation>
     </Box>
   )
