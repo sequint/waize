@@ -1,7 +1,7 @@
 /* General custom styles for navbar */
 .navBarHolder {
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   border-top: lightgrey solid 1px;
   padding-top: 10px;
@@ -10,7 +10,7 @@
 
 /* Style for active page link */
 .activeLinkIcon {
-  color: blue !important;
+  color: darkblue !important;
   padding: 6px 60px 8px !important;
 }
 
