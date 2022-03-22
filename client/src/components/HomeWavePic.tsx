@@ -1,4 +1,5 @@
 import wavePic from '../images/dashboardWave.jpeg'
+import wavePicSmall from '../images/dashboardWaveSmall.png'
 import './HomeWavePic.css'
 
 const HomeWavePic = () => {
@@ -6,7 +7,7 @@ const HomeWavePic = () => {
 
   return (
     <>
-      <img src={wavePic} alt="waves with waize generator" className="homeWavePic" />
+      <img src={wavePicSmall} alt="waves with waize generator" className="homeWavePic" />
     </>
   )
 }
