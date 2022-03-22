@@ -1,0 +1,11 @@
+/* Import google font lobster to be used for the title */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.homeTitle {
+  text-align: center;
+  background-color: transparent;
+  color: lightblue;
+  font-family: 'Lobster', cursive;
+  font-size: 40px;
+  margin-top: 10px;
+}
