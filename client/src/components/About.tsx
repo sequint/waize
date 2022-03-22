@@ -23,7 +23,7 @@ const aboutSections = [
 const About = () => {
   return (
     <>
-      <h2>What It Does</h2>
+      <h2 className="aboutTitle">What It Does</h2>
       <List className="aboutList" sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
         {
           aboutSections.map(item => (
