@@ -1,10 +1,11 @@
+import HomeTitle from '../components/HomeTitle'
 import NavBar from '../components/NavBar'
 
 const Home = () => {
 
   return (
     <>
-      <h1>Home</h1>
+      <HomeTitle />
       <NavBar definedRoute='home'/>
     </>
   )
