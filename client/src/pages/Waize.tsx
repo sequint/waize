@@ -1,10 +1,12 @@
 import ImageUpload from '../components/ImageUpload'
+import Camera from '../components/Camera'
 import NavBar from '../components/NavBar'
 
 const Waize = () => {
   return (
     <>
-      <ImageUpload />
+      {/* <ImageUpload /> */}
+      <Camera />
       <NavBar definedRoute='waize' />
     </>
   )
