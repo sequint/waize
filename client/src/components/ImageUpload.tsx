@@ -7,6 +7,7 @@ const ImageUpload = () => {
       <div className="uploadBtn">
         <UploadRoundedIcon className="uploadIcon" sx={{ fontSize: 100 }}  />
       </div>
+      <p className="uploadPrompt">Upload a Wave Image</p>
     </div>
   )
 }
