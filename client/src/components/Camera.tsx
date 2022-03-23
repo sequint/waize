@@ -31,6 +31,8 @@ const Camera = () => {
               key={option.name}
               icon={option.icon}
               tooltipTitle={option.name}
+              // On choice click, set cameraType state object to current object in the cameraOptions list
+              onClick={() => setCameraType({icon: option.icon, name: option.name})}
             />
           ))}
         </SpeedDial>
