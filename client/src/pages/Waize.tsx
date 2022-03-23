@@ -1,9 +1,10 @@
+import ImageUpload from '../components/ImageUpload'
 import NavBar from '../components/NavBar'
 
 const Waize = () => {
   return (
     <>
-      <h1>Waize</h1>
+      <ImageUpload />
       <NavBar definedRoute='waize' />
     </>
   )
