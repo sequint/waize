@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@700&display=swap');
+
 .aboutTitle {
   text-align: center;
+  font-family: 'Exo', sans-serif;
+  color: darkblue;
+  margin-top: 40px;
 }
 
 .aboutList {
-  margin-bottom: 80px !important;
+  margin-bottom: 100px !important;
+  margin-left: 15px !important;
+}
+
+.iconColor {
+  background-color: darkblue;
 }

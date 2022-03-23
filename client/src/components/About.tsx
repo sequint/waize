@@ -29,7 +29,7 @@ const About = () => {
           aboutSections.map(item => (
             <ListItem>
               <ListItemAvatar>
-                <Avatar>
+                <Avatar className="iconColor">
                   {item.icon}
                 </Avatar>
               </ListItemAvatar>
