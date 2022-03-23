@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Box from '@mui/material/Box'
 import SpeedDial from '@mui/material/SpeedDial'
 import SpeedDialIcon from '@mui/material/SpeedDialIcon'
@@ -12,13 +13,18 @@ const cameraOptions = [
 ]
 
 const Camera = () => {
+  const [cameraType, setCameraType] = useState({
+    icon: cameraOptions[1].icon,
+    name: cameraOptions[1].name
+  })
+
   return (
     <>
       <Box sx={{ transform: 'translateZ(0px)', flexGrow: 1 }} className="optionsBox">
         <SpeedDial
           ariaLabel="SpeedDial basic example"
           sx={{ position: 'absolute', bottom: 16, right: 16 }}
-          icon={<SpeedDialIcon />}
+          icon={cameraType.icon}
         >
           {cameraOptions.map((option) => (
             <SpeedDialAction
