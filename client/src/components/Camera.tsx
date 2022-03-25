@@ -20,16 +20,34 @@ const cameraOptions = [
 ]
 
 const Camera = () => {
+  // Initialize state values for toggling between photo or video
   const [cameraType, setCameraType] = useState({
     icon: cameraOptions[1].icon,
     name: cameraOptions[1].name,
     prompt: cameraOptions[1].prompt
   })
 
+  // State value of the image data url
+  const [imageDataURL, setImageDataURL] = useState()
+
+  // Check for video inputs and return a list of them
+  const getVideoInputList = async () => {
+    // Get the details of audio and video output of the device
+    const enumerateDevices = await navigator.mediaDevices.enumerateDevices()
+
+    //Filter video outputs (for devices with multiple cameras)
+    return enumerateDevices.filter((device) => device.kind === "videoinput")
+  }
+
+  // Display the list of video inputs found
+  const displayVideoInputs = () => {
+    const videoInputs = getVideoInputList()
+    console.log(videoInputs)
+  }
 
 
   return (
-    <div className="cameraContainer">
+    <div className="cameraContainer" onClick={displayVideoInputs}>
       <h4 className="cameraPrompt">{cameraType.prompt}</h4>
       <Box sx={{ transform: 'translateZ(0px)', flexGrow: 1 }} className="optionsBox">
         <SpeedDial
