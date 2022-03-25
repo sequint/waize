@@ -1,3 +1,19 @@
 .optionsBox {
   height: 92vh;
 }
+
+button {
+  background-color: darkblue;
+}
+
+.cameraPrompt {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 250px;
+  width: 260px;
+  color: grey;
+}
