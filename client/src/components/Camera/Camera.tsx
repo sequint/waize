@@ -4,6 +4,8 @@ import SpeedDial from '@mui/material/SpeedDial'
 import SpeedDialAction from '@mui/material/SpeedDialAction'
 import CameraAltRoundedIcon from '@mui/icons-material/CameraAltRounded'
 import VideoCameraBackRoundedIcon from '@mui/icons-material/VideoCameraBackRounded'
+import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked'
+import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked'
 import './Camera.css'
 
 const cameraOptions = [
