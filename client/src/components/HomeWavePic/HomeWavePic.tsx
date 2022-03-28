@@ -1,5 +1,5 @@
-import wavePic from '../images/dashboardWave.jpeg'
-import wavePicSmall from '../images/dashboardWaveSmall.png'
+import wavePic from '../../images/dashboardWave.jpeg'
+import wavePicSmall from '../../images/dashboardWaveSmall.png'
 import './HomeWavePic.css'
 
 const HomeWavePic = () => {
