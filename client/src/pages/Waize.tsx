@@ -1,6 +1,7 @@
-import ImageUpload from '../components/ImageUpload'
-import Camera from '../components/Camera'
-import NavBar from '../components/NavBar'
+import {
+  Camera,
+  NavBar
+} from '../components'
 
 const Waize = () => {
   return (

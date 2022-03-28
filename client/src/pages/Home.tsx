@@ -1,7 +1,9 @@
-import HomeTitle from '../components/HomeTitle'
-import HomeWavePic from '../components/HomeWavePic'
-import HomeBody from '../components/About'
-import NavBar from '../components/NavBar'
+import {
+  HomeTitle,
+  HomeWavePic,
+  About,
+  NavBar
+} from '../components'
 
 const Home = () => {
 
@@ -9,7 +11,7 @@ const Home = () => {
     <>
       <HomeTitle />
       <HomeWavePic />
-      <HomeBody />
+      <About />
       <NavBar definedRoute='home'/>
     </>
   )
