@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 import Box from '@mui/material/Box'
 import SpeedDial from '@mui/material/SpeedDial'
 import SpeedDialAction from '@mui/material/SpeedDialAction'
@@ -50,8 +50,10 @@ const Camera = () => {
   }
 
   const handleCameraOptionClick = (option: any) => {
+
     // Set the camera type state with option passed from the click and close options
     setCameraType({ icon: option.icon, name: option.name, prompt: option.prompt })
+
     handleClose()
   }
 
@@ -66,13 +68,16 @@ const Camera = () => {
           onClose={handleClose}
           onOpen={handleOpen}
           open={open}
+          onClick={(e) => e.stopPropagation()} // Prevents icon clicks from camera action
         >
           {cameraOptions.map((option) => (
             <SpeedDialAction
               key={option.name}
               icon={option.icon}
               tooltipTitle={option.name}
-              onClick={() => handleCameraOptionClick(option)}
+              onClick={() => {
+                handleCameraOptionClick(option)
+              }}
             />
           ))}
         </SpeedDial>
