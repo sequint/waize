@@ -4,8 +4,6 @@ import SpeedDial from '@mui/material/SpeedDial'
 import SpeedDialAction from '@mui/material/SpeedDialAction'
 import CameraAltRoundedIcon from '@mui/icons-material/CameraAltRounded'
 import VideoCameraBackRoundedIcon from '@mui/icons-material/VideoCameraBackRounded'
-import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked'
-import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked'
 import './Camera.css'
 
 const cameraOptions = [
@@ -28,9 +26,13 @@ const Camera = () => {
     name: cameraOptions[1].name,
     prompt: cameraOptions[1].prompt
   })
-
+  const [open, setOpen] = useState(false)
   // State value of the image data url
   const [imageDataURL, setImageDataURL] = useState()
+
+  // Handle speed dial open and close values on click
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
 
   // Check for video inputs and return a list of them
   const getVideoInputList = async () => {
@@ -47,6 +49,11 @@ const Camera = () => {
     console.log(videoInputs)
   }
 
+  const handleCameraOptionClick = (option: any) => {
+    // Set the camera type state with option passed from the click and close options
+    setCameraType({ icon: option.icon, name: option.name, prompt: option.prompt })
+    handleClose()
+  }
 
   return (
     <div className="cameraContainer" onClick={displayVideoInputs}>
@@ -56,15 +63,16 @@ const Camera = () => {
           ariaLabel="SpeedDial basic example"
           sx={{ position: 'absolute', bottom: 16, right: 16 }}
           icon={cameraType.icon}
-          className="speedDialColor"
+          onClose={handleClose}
+          onOpen={handleOpen}
+          open={open}
         >
           {cameraOptions.map((option) => (
             <SpeedDialAction
               key={option.name}
               icon={option.icon}
               tooltipTitle={option.name}
-              // On choice click, set cameraType state object to current object in the cameraOptions list
-              onClick={() => setCameraType({icon: option.icon, name: option.name, prompt: option.prompt})}
+              onClick={() => handleCameraOptionClick(option)}
             />
           ))}
         </SpeedDial>
