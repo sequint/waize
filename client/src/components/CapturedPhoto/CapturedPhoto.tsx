@@ -3,7 +3,6 @@ import Backdrop from '@mui/material/Backdrop'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
 import Fade from '@mui/material/Fade'
-import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 
 const style = {
@@ -19,13 +18,11 @@ const style = {
 }
 
 const CapturedPhoto = (props: any) => {
-  const [open, setOpen] = useState(false)
-  const handleOpen = () => setOpen(true)
+  const [open, setOpen] = useState(props.open)
   const handleClose = () => setOpen(false)
 
   return (
     <>
-      <Button onClick={handleOpen}>Open modal</Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
