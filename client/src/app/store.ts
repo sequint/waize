@@ -1,8 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
-// ...
+import capturedPhotoReducer from '../components/CapturedPhoto/capturedPhotoSlice'
 
-const store = configureStore({
-  reducer: {}
+
+export const store = configureStore({
+  reducer: {
+    capturedPhoto: capturedPhotoReducer,
+  },
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
