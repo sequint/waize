@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useAppSelector, useAppDispatch } from '../../app/hooks'
+import { selectPhotoView, togglePhotoView } from './capturedPhotoSlice'
 import Backdrop from '@mui/material/Backdrop'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
@@ -17,9 +18,9 @@ const style = {
   p: 4,
 }
 
-const CapturedPhoto = (props: any) => {
-  const [open, setOpen] = useState(props.open)
-  const handleClose = () => setOpen(false)
+const CapturedPhoto = () => {
+  const open = useAppSelector(selectPhotoView) // Variable to hold photo view state value
+  const dispatch = useAppDispatch()
 
   return (
     <>
@@ -27,7 +28,7 @@ const CapturedPhoto = (props: any) => {
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         open={open}
-        onClose={handleClose}
+        onClose={() => dispatch(togglePhotoView(false))}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
