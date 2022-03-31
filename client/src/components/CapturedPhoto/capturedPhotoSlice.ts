@@ -24,5 +24,8 @@ export const capturedPhotoSlice = createSlice({
 // Export the toggle action function for the capturedPhotoSlice
 export const { togglePhotoView } = capturedPhotoSlice.actions
 
+// Export state value
+export const selectPhotoView = (state: any) => state.toggleView.open
+
 // Export the default slice reducer
 export default capturedPhotoSlice.reducer
