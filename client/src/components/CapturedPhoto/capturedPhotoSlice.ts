@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
 // Define state types for CapturedPhoto
 interface CapturedPhotoState {
@@ -15,10 +15,11 @@ export const capturedPhotoSlice = createSlice({
   initialState,
   reducers: {
     // Slice function to toggle the modal view based on payload
-    togglePhotoView(state, action: PayloadAction<boolean>) {
-      state.open = action.payload
-    }
-  }
+    togglePhotoView: (state: any) => {
+      console.log('In toggle view')
+      state.open = !state.open
+    },
+  },
 })
 
 // Export the toggle action function for the capturedPhotoSlice
