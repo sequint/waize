@@ -28,7 +28,7 @@ const Camera = () => {
               const imageSrc = getScreenshot()
               console.log(imageSrc)
               console.log(open)
-              dispatch(togglePhotoView)
+              dispatch(togglePhotoView())
               console.log(open)
             }}
             className="cameraButton"

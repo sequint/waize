@@ -28,7 +28,7 @@ const CapturedPhoto = () => {
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         open={open}
-        onClose={dispatch(togglePhotoView)}
+        onClose={() => dispatch(togglePhotoView())}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
