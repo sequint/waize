@@ -11,7 +11,7 @@ const initialState: CapturedPhotoState = {
 }
 
 export const capturedPhotoSlice = createSlice({
-  name: 'toggleView',
+  name: 'capturedPhoto',
   initialState,
   reducers: {
     // Slice function to toggle the modal view based on payload
@@ -25,7 +25,7 @@ export const capturedPhotoSlice = createSlice({
 export const { togglePhotoView } = capturedPhotoSlice.actions
 
 // Export state value
-export const selectPhotoView = (state: any) => state.toggleView.open
+export const selectPhotoView = (state: any) => state.capturedPhoto.open
 
 // Export the default slice reducer
 export default capturedPhotoSlice.reducer
