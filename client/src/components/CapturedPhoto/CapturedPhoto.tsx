@@ -19,7 +19,7 @@ const style = {
 }
 
 const CapturedPhoto = () => {
-  const open = useAppSelector(selectPhotoView) // Variable to hold photo view state value
+  const open = useAppSelector(selectPhotoView)
   const dispatch = useAppDispatch()
 
   return (
@@ -28,7 +28,7 @@ const CapturedPhoto = () => {
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         open={open}
-        onClose={() => dispatch(togglePhotoView(false))}
+        onClose={dispatch(togglePhotoView)}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
