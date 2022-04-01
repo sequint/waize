@@ -27,9 +27,7 @@ const Camera = () => {
             onClick={() => {
               const imageSrc = getScreenshot()
               console.log(imageSrc)
-              console.log(open)
               dispatch(togglePhotoView())
-              console.log(open)
             }}
             className="cameraButton"
           >

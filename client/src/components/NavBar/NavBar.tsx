@@ -14,7 +14,6 @@ interface navbar {
 
 const NavBar: React.FC<navbar> = (props) => {
   const [value, setValue] = useState(0)
-  console.log(props.definedRoute)
 
   const updateIconClass = (icon: String) => {
     // Return a class string depending on the icon and definedRoute
