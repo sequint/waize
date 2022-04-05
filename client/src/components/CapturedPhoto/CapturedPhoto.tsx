@@ -1,10 +1,9 @@
 import { useAppSelector, useAppDispatch } from '../../app/hooks'
-import { selectPhotoView, togglePhotoView } from './capturedPhotoSlice'
+import { selectPhotoView, selectPhotoURL, togglePhotoView } from './capturedPhotoSlice'
 import Backdrop from '@mui/material/Backdrop'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
 import Fade from '@mui/material/Fade'
-import Typography from '@mui/material/Typography'
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -37,12 +36,7 @@ const CapturedPhoto = () => {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <Typography id="transition-modal-title" variant="h6" component="h2">
-              Text in a modal
-            </Typography>
-            <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </Typography>
+            <img src={useAppSelector(selectPhotoURL)} alt="captured wave" />
           </Box>
         </Fade>
       </Modal>
