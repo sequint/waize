@@ -4,6 +4,7 @@ import Backdrop from '@mui/material/Backdrop'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
 import Fade from '@mui/material/Fade'
+import './CapturedPhoto.css'
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -33,10 +34,11 @@ const CapturedPhoto = () => {
         BackdropProps={{
           timeout: 500,
         }}
+        className="capPhotoHolder"
       >
         <Fade in={open}>
-          <Box sx={style}>
-            <img src={useAppSelector(selectPhotoURL)} alt="captured wave" />
+          <Box sx={style} className="photoBox">
+            <img src={useAppSelector(selectPhotoURL)} alt="captured wave" className="photoImg" />
           </Box>
         </Fade>
       </Modal>

@@ -1,0 +1,14 @@
+.capPhotoHolder {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.photoBox {
+  padding: 0px !important;
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.photoImg {
+  width: 100%;
+}
