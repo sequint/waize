@@ -1,6 +1,6 @@
 import Webcam from 'react-webcam'
 import { useAppDispatch } from '../../app/hooks'
-import { togglePhotoView } from '../CapturedPhoto/capturedPhotoSlice'
+import { togglePhotoView, updatePhotoURL } from '../CapturedPhoto/capturedPhotoSlice'
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked'
 import './Camera.css'
 
@@ -25,6 +25,7 @@ const Camera = () => {
               const imageSrc = getScreenshot()
               console.log(imageSrc)
               dispatch(togglePhotoView())
+              dispatch(updatePhotoURL(imageSrc))
             }}
             className="cameraButton"
           >
