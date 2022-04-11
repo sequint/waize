@@ -1,7 +1,7 @@
 .grid {
   position: absolute;
   z-index: 1000;
-  height: 100vh;
-  width: 100vw;
-  border: 2px bold red;
+  height: 100%;
+  width: 100%;
+  border: 2px solid red;
 }
