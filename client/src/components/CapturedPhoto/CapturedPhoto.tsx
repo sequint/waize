@@ -4,7 +4,6 @@ import Backdrop from '@mui/material/Backdrop'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
 import Fade from '@mui/material/Fade'
-import { ColorGrid } from '..'
 import './CapturedPhoto.css'
 
 const style = {
@@ -39,7 +38,6 @@ const CapturedPhoto = () => {
       >
         <Fade in={open}>
           <Box sx={style} className="photoBox">
-            <ColorGrid />
             <img src={useAppSelector(selectPhotoURL)} alt="captured wave" className="photoImg" />
           </Box>
         </Fade>

@@ -2,6 +2,7 @@ import Webcam from 'react-webcam'
 import { useAppDispatch } from '../../app/hooks'
 import { togglePhotoView, updatePhotoURL } from '../CapturedPhoto/capturedPhotoSlice'
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked'
+import { ColorGrid } from '..'
 import './Camera.css'
 
 const Camera = () => {
@@ -13,6 +14,7 @@ const Camera = () => {
 
   return (
     <div className="webcamContainer">
+      <ColorGrid />
       <Webcam
         audio={false}
         screenshotFormat="image/jpeg"
