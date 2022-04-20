@@ -7,8 +7,8 @@ import './Camera.css'
 import { Stream } from 'stream'
 
 const Camera = () => {
-  const dispatch = useAppDispatch()
-  const [ stream, setStream ] = useState({})
+  // const dispatch = useAppDispatch()
+  const [ mediaStream, setMediaStream ] = useState({})
 
   // Set user media constraints to not get audio, and temp video as user facing
   const videoConstraints = {
@@ -22,12 +22,10 @@ const Camera = () => {
   //   )
 
   useEffect(() => {
-    // Set a null variable to hold the media stream
-    // let stream: any = []
 
     try {
-      navigator.mediaDevices.getUserMedia(videoConstraints).then(mediaStream => {
-        setStream(mediaStream)
+      const stream = navigator.mediaDevices.getUserMedia(videoConstraints).then(mediaStream => {
+        setMediaStream(stream)
         console.log(mediaStream.getVideoTracks())
       })
     }
