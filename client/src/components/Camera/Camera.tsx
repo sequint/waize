@@ -5,7 +5,7 @@ import './Camera.css'
 // Set constraints for video stream from user midea data (switch to environment facing after testing)
 const videoConstraints = {
   audio: false,
-  video: { facingMode: 'user' }
+  video: { facingMode: 'environment' }
 }
 
 const Camera = () => {
@@ -24,7 +24,10 @@ const Camera = () => {
   }
 
   return (
-    <video ref={videoRef} onCanPlay={handleCanPlay} autoPlay playsInline muted />
+    <div className="webCamContainer">
+      <video ref={videoRef} onCanPlay={handleCanPlay} style={{ width: '100%' }} autoPlay playsInline muted />
+    </div>
+    
   )
 }
 
