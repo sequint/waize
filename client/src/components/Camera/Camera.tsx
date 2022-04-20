@@ -44,10 +44,19 @@ const Camera = () => {
   }
 
   return (
-    <div className="webCamContainer">
-      <video ref={videoRef} onCanPlay={handleCanPlay} style={{ width: '100%' }} autoPlay playsInline muted />
-    </div>
-    
+    <Measure bounds onResize={handleResize}>
+      {({ measureRef }) => (
+        <div ref={measureRef} style={{ height: `${container.height}px`}}>
+        <video
+          ref={videoRef}
+          onCanPlay={handleCanPlay}
+          style={{ width: '100vw', height: '100vh' }}
+          autoPlay
+          playsInline
+          muted />
+      </div>
+      )}
+    </Measure>
   )
 }
 
