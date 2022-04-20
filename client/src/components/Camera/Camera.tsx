@@ -1,5 +1,5 @@
 import Webcam from 'react-webcam'
-import { useState, createElement } from 'react'
+import { useState, useEffect, createElement } from 'react'
 import { useAppDispatch } from '../../app/hooks'
 import { togglePhotoView, updatePhotoURL } from '../CapturedPhoto/capturedPhotoSlice'
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked'
@@ -10,36 +10,33 @@ const Camera = () => {
   const dispatch = useAppDispatch()
   const [ stream, setStream ] = useState({})
 
-  const videoStream = createElement(
-    'video',
-    {autoPlay: true, src: stream, style: {height: '100vh', width: '100%'}}
-    )
+  // Set user media constraints to not get audio, and temp video as user facing
+  const videoConstraints = {
+    audio: false,
+    facingMode: 'user'
+  }
 
-  const getStream: any = () => {
+  // const videoStream = createElement(
+  //   'video',
+  //   {autoPlay: true, src: stream.getVideoTracks().id, muted: true, playsInline: true, style: {height: '93vh', width: '100%'}}
+  //   )
+
+  useEffect(() => {
     // Set a null variable to hold the media stream
     // let stream: any = []
-
-    // Set user media constraints to not get audio, and temp video as user facing
-    const videoConstraints = {
-      audio: false,
-      video: true
-    }
 
     try {
       navigator.mediaDevices.getUserMedia(videoConstraints).then(mediaStream => {
         setStream(mediaStream)
-        console.log(stream)
-        return stream
+        console.log(mediaStream.getVideoTracks())
       })
     }
     catch(err) { console.log(err) }
-    console.log(stream)
 
-    return stream
-  }
+  }, [])
 
   return (
-    <div className="webcamContainer" onClick={getStream}>
+    <div className="webcamContainer">
       {videoStream}
       {/* <ColorGrid /> */}
       {/* <Webcam
