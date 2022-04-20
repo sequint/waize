@@ -1,5 +1,5 @@
 import Webcam from 'react-webcam'
-import { useState, useRef } from 'react'
+import { useState, createElement } from 'react'
 import { useAppDispatch } from '../../app/hooks'
 import { togglePhotoView, updatePhotoURL } from '../CapturedPhoto/capturedPhotoSlice'
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked'
@@ -9,6 +9,11 @@ import { Stream } from 'stream'
 const Camera = () => {
   const dispatch = useAppDispatch()
   const [ stream, setStream ] = useState({})
+
+  const videoStream = createElement(
+    'video',
+    {autoPlay: true, src: stream, style: {height: '100vh', width: '100%'}}
+    )
 
   const getStream: any = () => {
     // Set a null variable to hold the media stream
@@ -35,7 +40,7 @@ const Camera = () => {
 
   return (
     <div className="webcamContainer" onClick={getStream}>
-      
+      {videoStream}
       {/* <ColorGrid /> */}
       {/* <Webcam
         audio={false}
