@@ -18,8 +18,13 @@ const Camera = () => {
     videoRef.current.srcObject = mediaStream
   }
 
+  // Plays video stream to handle canPlay prop of video element
+  const handleCanPlay = () => {
+    videoRef.current.play()
+  }
+
   return (
-    <></>
+    <video ref={videoRef} onCanPlay={handleCanPlay} autoPlay playsInline muted />
   )
 }
 
