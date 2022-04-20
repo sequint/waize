@@ -39,6 +39,7 @@ const Camera = () => {
 
   // Plays video stream to handle canPlay prop of video element
   const handleCanPlay = () => {
+    calculateRatio(videoRef.current.videoHeight, videoRef.current.videoWidth)
     videoRef.current.play()
   }
 
