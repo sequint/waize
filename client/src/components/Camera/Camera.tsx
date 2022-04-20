@@ -1,5 +1,5 @@
 import Webcam from 'react-webcam'
-import { useState, useEffect, createElement } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useAppDispatch } from '../../app/hooks'
 import { togglePhotoView, updatePhotoURL } from '../CapturedPhoto/capturedPhotoSlice'
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked'
@@ -22,14 +22,15 @@ const Camera = () => {
   //   )
 
   useEffect(() => {
-
-    try {
-      const stream = navigator.mediaDevices.getUserMedia(videoConstraints).then(mediaStream => {
-        setMediaStream(stream)
-        console.log(mediaStream.getVideoTracks())
-      })
+    const enableStream = async () => {
+      try {
+        const stream: any = await navigator.mediaDevices.getUserMedia(videoConstraints).then(mediaStream => {
+          setMediaStream(stream)
+          console.log(mediaStream.getVideoTracks())
+        })
+      }
+      catch (err) { console.log(err) }
     }
-    catch(err) { console.log(err) }
 
   }, [])
 
