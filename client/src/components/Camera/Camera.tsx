@@ -10,28 +10,29 @@ const Camera = () => {
   const dispatch = useAppDispatch()
   const [ media, setMedia ] = useState({})
 
-  const videoConstraints = {
-    facingMode: "user"
-  }
+  const getStream: any = () => {
+    // Set a null variable to hold the media stream
+    let stream = null
 
-  // polyfill based on https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
-  const getMediaDevices = () => {
-    console.log('In function')
-    if (typeof window === 'undefined') { return }
+    // Set user media constraints to not get audio, and temp video as user facing
+    const videoConstraints = {
+      audio: false,
+      video: {
+        facingMode: 'user'
+      }
+    }
 
-    // Older browsers might not implement mediaDevices at all, so we set an empty object first
-    if (navigator.mediaDevices === undefined) {
-      setMedia({})
-      console.log('No media devices available on this browser')
+    try {
+      stream = navigator.mediaDevices.getUserMedia(videoConstraints)
+      console.log(stream)
     }
-    else {
-      setMedia(navigator.mediaDevices)
-      console.log(media)
-    }
+    catch(err) { console.log(err) }
+
+    return stream
   }
 
   return (
-    <div className="webcamContainer" onClick={getMediaDevices}>
+    <div className="webcamContainer" onClick={getStream}>
       {/* <ColorGrid /> */}
       {/* <Webcam
         audio={false}
