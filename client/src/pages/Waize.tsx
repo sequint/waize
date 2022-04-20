@@ -8,7 +8,7 @@ const Waize = () => {
   return (
     <>
       <Camera />
-      <CapturedPhoto />
+      {/* <CapturedPhoto /> */}
       <NavBar definedRoute='waize' />
     </>
   )

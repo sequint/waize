@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { useUserMedia } from '../../hooks/useUserMedia'
+import { useUserMedia, usePortraitRatio } from '../../hooks'
 import './Camera.css'
 
 // Set constraints for video stream from user midea data (switch to environment facing after testing)
@@ -12,6 +12,9 @@ const Camera = () => {
   // Create a video element using ref
   const videoRef: any = useRef()
   const mediaStream = useUserMedia(videoConstraints)
+  // Set state for container height and ratio
+  const [container, setContainer] = useState({ height: '93vh' })
+  const [aspectRatio, setAspectRatio] = usePortraitRatio(1.777)
 
   // If there is a video stream live, a video element set, and no src on the object - then set a src equal to the mediaStream
   if (mediaStream && videoRef.current && !videoRef.current.srcObject) {
