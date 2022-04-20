@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import Measure from 'react-measure'
 import { withContentRect } from 'react-measure'
-import { useUserMedia, usePortraitRatio } from '../../hooks'
+import { useUserMedia, usePortraitRatio, useOffsets } from '../../hooks'
 import './Camera.css'
 
 // Set constraints for video stream from user midea data (switch to environment facing after testing)
@@ -15,8 +15,14 @@ const Camera = () => {
   const videoRef: any = useRef()
   const mediaStream = useUserMedia(videoConstraints)
   // Set state for container height and ratio
-  const [container, setContainer] = useState({ height: 0 })
-  const [aspectRatio, setAspectRatio] = usePortraitRatio(1.777)
+  const [container, setContainer] = useState({ height: 0, width: 0 })
+  const [aspectRatio, calculateRatio] = usePortraitRatio(1.777)
+  const offsets = useOffsets(
+    videoRef.current && videoRef.current.videoWidth,
+    videoRef.current && videoRef.current.videoHeight,
+    container.width,
+    container.height
+  )
 
   // If there is a video stream live, a video element set, and no src on the object - then set a src equal to the mediaStream
   if (mediaStream && videoRef.current && !videoRef.current.srcObject) {
@@ -26,7 +32,8 @@ const Camera = () => {
   // Set the container height to the full screen
   const handleResize = (contentRect: any) => {
     setContainer({
-      height: Math.round(contentRect.bounds.height / aspectRatio)
+      height: Math.round(contentRect.bounds.height),
+      width: Math.round(contentRect.bounds.width)
     })
   }
 
