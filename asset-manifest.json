@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/waize/static/css/main.d2fa8216.chunk.css",
-    "main.js": "/waize/static/js/main.b1a06df4.chunk.js",
-    "main.js.map": "/waize/static/js/main.b1a06df4.chunk.js.map",
+    "main.css": "/waize/static/css/main.ec24de1c.chunk.css",
+    "main.js": "/waize/static/js/main.d30717a8.chunk.js",
+    "main.js.map": "/waize/static/js/main.d30717a8.chunk.js.map",
     "runtime-main.js": "/waize/static/js/runtime-main.a7e1c911.js",
     "runtime-main.js.map": "/waize/static/js/runtime-main.a7e1c911.js.map",
-    "static/js/2.c366cd73.chunk.js": "/waize/static/js/2.c366cd73.chunk.js",
-    "static/js/2.c366cd73.chunk.js.map": "/waize/static/js/2.c366cd73.chunk.js.map",
+    "static/js/2.169e7ee6.chunk.js": "/waize/static/js/2.169e7ee6.chunk.js",
+    "static/js/2.169e7ee6.chunk.js.map": "/waize/static/js/2.169e7ee6.chunk.js.map",
     "index.html": "/waize/index.html",
-    "static/css/main.d2fa8216.chunk.css.map": "/waize/static/css/main.d2fa8216.chunk.css.map",
-    "static/js/2.c366cd73.chunk.js.LICENSE.txt": "/waize/static/js/2.c366cd73.chunk.js.LICENSE.txt",
+    "static/css/main.ec24de1c.chunk.css.map": "/waize/static/css/main.ec24de1c.chunk.css.map",
+    "static/js/2.169e7ee6.chunk.js.LICENSE.txt": "/waize/static/js/2.169e7ee6.chunk.js.LICENSE.txt",
     "static/media/dashboardWave.980ac552.jpeg": "/waize/static/media/dashboardWave.980ac552.jpeg",
     "static/media/dashboardWaveSmall.74d48754.png": "/waize/static/media/dashboardWaveSmall.74d48754.png"
   },
   "entrypoints": [
     "static/js/runtime-main.a7e1c911.js",
-    "static/js/2.c366cd73.chunk.js",
-    "static/css/main.d2fa8216.chunk.css",
-    "static/js/main.b1a06df4.chunk.js"
+    "static/js/2.169e7ee6.chunk.js",
+    "static/css/main.ec24de1c.chunk.css",
+    "static/js/main.d30717a8.chunk.js"
   ]
 }
