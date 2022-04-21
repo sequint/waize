@@ -1,11 +1,11 @@
 .grid {
   position: absolute;
-  z-index: 1000;
+  z-index: 3000;
   height: 100vh;
   width: 100%;
-  line-height: 0;
+  background-color: transparent;
 }
 
-.box {
-  display: inline-flex;
+.colorText {
+  text-align: center;
 }
