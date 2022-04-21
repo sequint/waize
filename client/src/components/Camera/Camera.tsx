@@ -1,5 +1,7 @@
 import { useRef } from 'react'
 import { useUserMedia } from '../../hooks'
+import { useAppDispatch } from '../../app/hooks'
+import { updateAverageColor } from './averageColorSlice'
 import './Camera.css'
 
 // Set constraints for video stream from user midea data (switch to environment facing after testing)
@@ -9,6 +11,8 @@ const videoConstraints = {
 }
 
 const Camera = () => {
+  const dispatch = useAppDispatch()
+
   // Create a video element using ref
   const videoRef: any = useRef()
   const mediaStream = useUserMedia(videoConstraints)
@@ -49,6 +53,9 @@ const Camera = () => {
     rgbBlue = Math.floor(rgbBlue / totalColors)
 
     rgbBlue === 255 ? console.log('You might be looking at the ocean') : console.log('You are probably not looking at the ocean')
+
+    // Update average color state
+    dispatch(updateAverageColor(rgbBlue))
 
   }
 
