@@ -24,7 +24,7 @@ const Camera = () => {
     setInterval(() => {
       const context = canvas.getContext('2d')
       context.drawImage(videoRef.current, 0, 0, 200, 200)
-      console.log(context.getImageData(0, 0, 20, 20))
+      // console.log(context.getImageData(0, 0, 20, 20))
     }, 1)
   }
 

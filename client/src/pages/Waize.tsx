@@ -8,7 +8,7 @@ const Waize = () => {
   return (
     <>
       <Camera />
-      <Canvas />
+      {/* <Canvas /> */}
       <NavBar definedRoute='waize' />
     </>
   )
