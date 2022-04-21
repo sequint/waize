@@ -60,15 +60,15 @@ const Camera = () => {
   }
 
   const createCanvasFromStream = () => {
-    const context = canvas.getContext('2d')
-    context.drawImage(videoRef.current, 0, 0, 200, 200)
-    getAverageColor(context.getImageData(0, 0, 20, 20))
-    // setInterval(() => {
-    //   const context = canvas.getContext('2d')
-    //   context.drawImage(videoRef.current, 0, 0, 200, 200)
-    //   getAverageColor(context.getImageData(0, 0, 20, 20))
-    //   // console.log(context.getImageData(0, 0, 20, 20))
-    // }, 1)
+    // const context = canvas.getContext('2d')
+    // context.drawImage(videoRef.current, 0, 0, 200, 200)
+    // getAverageColor(context.getImageData(0, 0, 20, 20))
+    setInterval(() => {
+      const context = canvas.getContext('2d')
+      context.drawImage(videoRef.current, 0, 0, 200, 200)
+      getAverageColor(context.getImageData(0, 0, 20, 20))
+      // console.log(context.getImageData(0, 0, 20, 20))
+    }, 1000)
   }
 
   // Plays video stream to handle canPlay prop of video element
