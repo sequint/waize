@@ -1,6 +1,6 @@
 import {
   Camera,
-  CapturedPhoto,
+  Canvas,
   NavBar
 } from '../components'
 
@@ -8,7 +8,7 @@ const Waize = () => {
   return (
     <>
       <Camera />
-      {/* <CapturedPhoto /> */}
+      <Canvas />
       <NavBar definedRoute='waize' />
     </>
   )
