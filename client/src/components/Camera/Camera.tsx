@@ -50,7 +50,7 @@ const Camera = () => {
         <video
           ref={videoRef}
           onCanPlay={handleCanPlay}
-          style={{ width: '100vw', height: '100vh' }}
+          className="streamScreen"
           autoPlay
           playsInline
           muted />

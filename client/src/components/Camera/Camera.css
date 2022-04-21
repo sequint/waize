@@ -1,39 +1,5 @@
-.optionsBox {
-  height: 92vh;
-}
-
-button {
-  background-color: darkblue;
-}
-
-.cameraPrompt {
-  z-index: 2;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 250px;
-  width: 260px;
-  color: grey;
-  text-align: center;
-}
-
-.webcamContainer {
+.streamScreen {
+  width: 100%;
   height: 100vh;
-}
-
-.cameraField {
-  z-index: 1;
-  position: absolute;
-  width: 100%;
-}
-
-.cameraButton {
-  z-index: 2;
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  margin-top: 80vh;
-  color: red;
+  object-fit: cover;
 }
