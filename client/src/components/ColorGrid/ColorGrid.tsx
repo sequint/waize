@@ -1,9 +1,22 @@
+import { useAppSelector } from '../../app/hooks'
+import { selectAverageColor } from '../Camera/averageColorSlice'
 import './ColorGrid.css'
 
 const ColorGrid = () => {
+  const averageColor = useAppSelector(selectAverageColor)
+
+  const oceanNotOcean: any = () => {
+    if (averageColor === 225) {
+      return <h1 className="colorText">You might be looking at an ocean</h1>
+    }
+    else {
+      return <h1 className="colorText">That's probably not an ocean</h1>
+    }
+  }
+
   return (
     <div className="grid">
-      <h1 className="colorText">Hello</h1>
+      {oceanNotOcean()}
     </div>
   )
 }
