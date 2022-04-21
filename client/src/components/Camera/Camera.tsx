@@ -20,12 +20,48 @@ const Camera = () => {
     videoRef.current.srcObject = mediaStream
   }
 
+  const getAverageColor = (colors: any) => {
+    console.log(colors.data)
+    // Initialize rbg values
+    let totalColors = 0
+    let rgbRed = 0
+    let rgbGreen = 0
+    let rgbBlue = 0
+
+    // Create a for loop that iterates through every fourth position of the colors array
+    for (let index = 0; index < colors.data.length; index += 4) {
+      // Sum all values of red color
+      rgbRed += colors.data[index]
+
+      // Sum all values of green color
+      rgbGreen += colors.data[index + 1]
+
+      // Sum all values of blue color
+      rgbBlue += colors.data[index + 2]
+
+      // Increment the total number of
+      // values of rgb colors
+      totalColors++
+    }
+
+    rgbRed = Math.floor(rgbRed / totalColors)
+    rgbGreen = Math.floor(rgbGreen / totalColors)
+    rgbBlue = Math.floor(rgbBlue / totalColors)
+
+    rgbBlue === 255 ? console.log('You might be looking at the ocean') : console.log('You are probably not looking at the ocean')
+
+  }
+
   const createCanvasFromStream = () => {
-    setInterval(() => {
-      const context = canvas.getContext('2d')
-      context.drawImage(videoRef.current, 0, 0, 200, 200)
-      // console.log(context.getImageData(0, 0, 20, 20))
-    }, 1)
+    const context = canvas.getContext('2d')
+    context.drawImage(videoRef.current, 0, 0, 200, 200)
+    getAverageColor(context.getImageData(0, 0, 20, 20))
+    // setInterval(() => {
+    //   const context = canvas.getContext('2d')
+    //   context.drawImage(videoRef.current, 0, 0, 200, 200)
+    //   getAverageColor(context.getImageData(0, 0, 20, 20))
+    //   // console.log(context.getImageData(0, 0, 20, 20))
+    // }, 1)
   }
 
   // Plays video stream to handle canPlay prop of video element
