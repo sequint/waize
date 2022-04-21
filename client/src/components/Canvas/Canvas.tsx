@@ -1,4 +1,5 @@
 import { useRef, useEffect } from 'react'
+import { useUserMedia } from '../../hooks'
 
 const Canvas = (props: any) => {
 
@@ -9,14 +10,14 @@ const Canvas = (props: any) => {
   useEffect(() => {
     const canvas: any = canvasRef.current
     const canvasContext = canvas.getContext('2d')
-    canvasContext.fillRect(0, 0, 10, 10)
   }, [])
 
-
-  // Retrun the 10x10 px canvas
   return (
     <>
-      <canvas ref={canvasRef} width={10} height={10} {...props} />
+      <canvas
+        ref={canvasRef}
+        className="canvasStyle"
+        {...props} />
     </>
   )
 }
