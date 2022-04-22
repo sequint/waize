@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { RootState } from '../../app/store'
 
 // Define state types for CapturedPhoto
 interface AverageColorState {
@@ -24,7 +25,7 @@ export const averageColorSlice = createSlice({
 export const { updateAverageColor } = averageColorSlice.actions
 
 // Export state values
-export const selectAverageColor = (state: any) => state.averageColor.color
+export const selectAverageColor = (state: RootState) => state.averageColor.color
 
 // Export the default slice reducer
 export default averageColorSlice.reducer

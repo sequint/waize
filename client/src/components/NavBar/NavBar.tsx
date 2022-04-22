@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useAppDispatch } from '../../app/hooks'
-import { updateDefinedRoute } from './definedRouteSlice'
+import { useAppSelector } from '../../app/hooks'
+import { selectInterval } from '../Camera/intervalSlice'
 import { Link } from 'react-router-dom'
 import Box from '@mui/material/Box'
 import BottomNavigation from '@mui/material/BottomNavigation'
@@ -8,7 +8,6 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction'
 import CottageRounded from '@mui/icons-material/CottageRounded'
 import WavesRoundedIcon from '@mui/icons-material/WavesRounded'
 import './NavBar.css'
-import { updateAverageColor } from '../Camera/averageColorSlice'
 
 // Typescript interface to define prop type for the defined route in NavBar
 interface navbar {
@@ -16,18 +15,18 @@ interface navbar {
 }
 
 const NavBar: React.FC<navbar> = (props) => {
-  const dispatch = useAppDispatch()
+  const interval = useAppSelector(selectInterval)
   const [value, setValue] = useState(0)
+
+  if (props.definedRoute === 'waize') { clearInterval(interval)}
 
   const updateIconClass = (icon: String) => {
     // Return a class string depending on the icon and definedRoute
     switch(icon) {
       case 'waize':
-        dispatch(updateAverageColor(icon))
         if (props.definedRoute === 'waize') { return 'activeLinkIcon' }
         else { return 'inactiveLinkIcon' }
       case 'waizeVR':
-        dispatch(updateAverageColor(icon))
         return props.definedRoute === 'waizeVR' ? 'activeLinkIcon' : 'inactiveLinkIcon'
       default:
         return 'inactiveLinkIcon'

@@ -4,6 +4,7 @@ import './ColorGrid.css'
 
 const ColorGrid = () => {
   const averageColor = useAppSelector(selectAverageColor)
+  console.log(averageColor)
 
   const oceanNotOcean: any = () => {
     // return <h1 className="colorText">{averageColor}</h1>

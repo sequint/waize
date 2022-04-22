@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { useUserMedia } from '../../hooks'
 import { useAppDispatch } from '../../app/hooks'
 import { updateAverageColor } from './averageColorSlice'
+import { updateInterval } from './intervalSlice'
 import './Camera.css'
 
 // Set constraints for video stream from user midea data (switch to environment facing after testing)
@@ -22,7 +23,8 @@ const Camera = () => {
   const canvasRef: any = useRef()
   const canvas = canvasRef.current
 
-  // If there is a video stream live, a video element set, and no src on the object - then set a src equal to the mediaStream
+  // If there is a video stream live, a video element set, and no src on the object
+  // then set a src equal to the mediaStream
   if (mediaStream && videoRef.current && !videoRef.current.srcObject) {
     videoRef.current.srcObject = mediaStream
   }
@@ -46,8 +48,7 @@ const Camera = () => {
       // Sum all values of blue color
       rgbBlue += colors.data[index + 2]
 
-      // Increment the total number of
-      // values of rgb colors
+      // Increment the total number of values of rgb colors
       totalColors++
     }
 
@@ -64,14 +65,17 @@ const Camera = () => {
     // const context = canvas.getContext('2d')
     // context.drawImage(videoRef.current, 0, 0, screenWidth, screenHeight)
     // getAverageColor(context.getImageData(0, 0, screenWidth, screenHeight))
-    setInterval(() => {
+    const interval = setInterval(() => {
+      console.log('still in function')
       const context = canvas.getContext('2d')
       context.drawImage(videoRef.current, 0, 0, screenWidth, screenHeight)
       getAverageColor(context.getImageData(0, 0, screenWidth, screenHeight))
     }, 1000)
+    dispatch(updateInterval(interval))
   }
 
   // Plays video stream to handle canPlay prop of video element
+  // and create the canvas stream
   const handleCanPlay = () => {
     videoRef.current.play()
     createCanvasFromStream()
