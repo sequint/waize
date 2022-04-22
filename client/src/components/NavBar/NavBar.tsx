@@ -18,11 +18,11 @@ const NavBar: React.FC<navbar> = (props) => {
   const updateIconClass = (icon: String) => {
     // Return a class string depending on the icon and definedRoute
     switch(icon) {
-      case 'home':
-        if (props.definedRoute === 'home') { return 'activeLinkIcon' }
-        else { return 'inactiveLinkIcon' }
       case 'waize':
-        return props.definedRoute === 'waize' ? 'activeLinkIcon' : 'inactiveLinkIcon'
+        if (props.definedRoute === 'waize') { return 'activeLinkIcon' }
+        else { return 'inactiveLinkIcon' }
+      case 'waizeVR':
+        return props.definedRoute === 'waizeVR' ? 'activeLinkIcon' : 'inactiveLinkIcon'
       default:
         return 'inactiveLinkIcon'
     }
@@ -37,11 +37,11 @@ const NavBar: React.FC<navbar> = (props) => {
           setValue(newValue)
         }}
       >
-        <Link to='/'>
-          <BottomNavigationAction className={updateIconClass('home')} label="Home" icon={<CottageRounded />} />
-        </Link>
         <Link to='/waize'>
-          <BottomNavigationAction className={updateIconClass('waize')} label="Waize" icon={<WavesRoundedIcon />} />
+          <BottomNavigationAction className={updateIconClass('waize')} label="Home" icon={<CottageRounded />} />
+        </Link>
+        <Link to='/waizeVR'>
+          <BottomNavigationAction className={updateIconClass('waizeVR')} label="Waize" icon={<WavesRoundedIcon />} />
         </Link>
         
       </BottomNavigation>

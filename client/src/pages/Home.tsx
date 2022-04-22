@@ -12,7 +12,7 @@ const Home = () => {
       <HomeTitle />
       <HomeWavePic />
       <About />
-      <NavBar definedRoute='home'/>
+      <NavBar definedRoute='waize'/>
     </>
   )
 }

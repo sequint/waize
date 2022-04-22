@@ -12,10 +12,10 @@ const App = () => {
     <>
       <Router>
         <Switch>
-          <Route exact path='/'>
+          <Route exact path='/waize'>
             <Home />
           </Route>
-          <Route path='/waize'>
+          <Route path='/waizeVR'>
             <Waize />
           </Route>
         </Switch>

@@ -10,6 +10,9 @@ const videoConstraints = {
   video: { facingMode: 'environment' }
 }
 
+const screenWidth = window.innerWidth
+const screenHeight = window.innerHeight * .93
+
 const Camera = () => {
   const dispatch = useAppDispatch()
 
@@ -52,8 +55,6 @@ const Camera = () => {
     rgbGreen = Math.floor(rgbGreen / totalColors)
     rgbBlue = Math.floor(rgbBlue / totalColors)
 
-    rgbBlue === 255 ? console.log('You might be looking at the ocean') : console.log('You are probably not looking at the ocean')
-
     // Update average color state
     dispatch(updateAverageColor(rgbBlue))
 
@@ -61,13 +62,12 @@ const Camera = () => {
 
   const createCanvasFromStream = () => {
     // const context = canvas.getContext('2d')
-    // context.drawImage(videoRef.current, 0, 0, 200, 200)
-    // getAverageColor(context.getImageData(0, 0, 20, 20))
+    // context.drawImage(videoRef.current, 0, 0, screenWidth, screenHeight)
+    // getAverageColor(context.getImageData(0, 0, screenWidth, screenHeight))
+    const context = canvas.getContext('2d')
+    context.drawImage(videoRef.current, 0, 0, screenWidth, screenHeight)
     setInterval(() => {
-      const context = canvas.getContext('2d')
-      context.drawImage(videoRef.current, 0, 0, 200, 200)
-      getAverageColor(context.getImageData(0, 0, 20, 20))
-      // console.log(context.getImageData(0, 0, 20, 20))
+      getAverageColor(context.getImageData(0, 0, screenWidth, screenHeight))
     }, 1000)
   }
 

@@ -9,7 +9,7 @@ const Waize = () => {
     <>
       <Camera />
       <ColorGrid />
-      <NavBar definedRoute='waize' />
+      <NavBar definedRoute='waizeVR' />
     </>
   )
 }
