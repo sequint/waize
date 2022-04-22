@@ -64,9 +64,9 @@ const Camera = () => {
     // const context = canvas.getContext('2d')
     // context.drawImage(videoRef.current, 0, 0, screenWidth, screenHeight)
     // getAverageColor(context.getImageData(0, 0, screenWidth, screenHeight))
-    const context = canvas.getContext('2d')
-    context.drawImage(videoRef.current, 0, 0, screenWidth, screenHeight)
     setInterval(() => {
+      const context = canvas.getContext('2d')
+      context.drawImage(videoRef.current, 0, 0, screenWidth, screenHeight)
       getAverageColor(context.getImageData(0, 0, screenWidth, screenHeight))
     }, 1000)
   }
