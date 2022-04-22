@@ -9,10 +9,10 @@ const ColorGrid = () => {
   const oceanNotOcean: any = () => {
     // return <h1 className="colorText">{averageColor}</h1>
     if (averageColor >= 120 && averageColor <= 225) {
-      return <h1 className="colorText">{averageColor} You might be looking at an ocean</h1>
+      return <h1 className="colorText">You might be looking at an ocean</h1>
     }
     else {
-      return <h1 className="colorText">{averageColor} That's probably not an ocean</h1>
+      return <h1 className="colorText">That's probably not an ocean</h1>
     }
   }
 
