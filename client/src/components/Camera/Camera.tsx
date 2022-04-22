@@ -62,14 +62,10 @@ const Camera = () => {
   }
 
   const createCanvasFromStream = () => {
-    // const context = canvas.getContext('2d')
-    // context.drawImage(videoRef.current, 0, 0, screenWidth, screenHeight)
-    // getAverageColor(context.getImageData(0, 0, screenWidth, screenHeight))
     const interval = setInterval(() => {
-      console.log('still in function')
       const context = canvas.getContext('2d')
-      context.drawImage(videoRef.current, 0, 0, screenWidth, screenHeight)
-      getAverageColor(context.getImageData(0, 0, screenWidth, screenHeight))
+      context.drawImage(videoRef.current, 0, 0, screenWidth, screenWidth * .40)
+      getAverageColor(context.getImageData(0, 0, screenWidth, screenWidth * .40))
     }, 1000)
     dispatch(updateInterval(interval))
   }
