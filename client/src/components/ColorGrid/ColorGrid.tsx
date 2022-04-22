@@ -12,7 +12,7 @@ const ColorGrid = () => {
       return <h1 className="colorText">You might be looking at an ocean</h1>
     }
     else {
-      return <h1 className="colorText">That's probably not an ocean</h1>
+      return <h1 className="colorText">Point camera to the ocean</h1>
     }
   }
 
