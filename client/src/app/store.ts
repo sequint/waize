@@ -1,14 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
 import capturedPhotoReducer from '../components/CapturedPhoto/capturedPhotoSlice'
 import averageColorReducer from '../components/Camera/averageColorSlice'
-import definedRouteReducer from '../components/NavBar/definedRouteSlice'
+import intervalReducer from '../components/Camera/intervalSlice'
 
 
 export const store = configureStore({
   reducer: {
     capturedPhoto: capturedPhotoReducer,
     averageColor: averageColorReducer,
-    definedRoute: definedRouteReducer
+    interval: intervalReducer
   },
 })
 
