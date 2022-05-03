@@ -30,7 +30,7 @@ const Camera = () => {
   }
 
   const getAverageColor = (colors: any) => {
-    console.log(colors.data)
+    // console.log(colors.data)
     // Initialize rbg values
     let totalColors = 0
     let rgbRed = 0
@@ -62,10 +62,15 @@ const Camera = () => {
   }
 
   const createCanvasFromStream = () => {
+    // Create initial x and y coords for nodes using half screen height and width in 10px nodes
+    const initialX = (screenWidth / 10) / 2
+    const initialY = ((screenWidth * .40) / 10) / 2
+
+    // Set an interval every second to create image nodes from the stream
     const interval = setInterval(() => {
       const context = canvas.getContext('2d')
       context.drawImage(videoRef.current, 0, 0, screenWidth, screenWidth * .40)
-      getAverageColor(context.getImageData(0, 0, screenWidth, screenWidth * .40))
+      getAverageColor(context.getImageData(initialX, initialY, 10, 10))
     }, 1000)
     dispatch(updateInterval(interval))
   }
