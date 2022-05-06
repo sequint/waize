@@ -12,7 +12,6 @@ const videoConstraints = {
 }
 
 const screenWidth = window.innerWidth
-const screenHeight = window.innerHeight * .93
 
 const Camera = () => {
   const dispatch = useAppDispatch()
@@ -30,7 +29,7 @@ const Camera = () => {
   }
 
   const getAverageColor = (colors: any) => {
-    // console.log(colors.data)
+    console.log(colors.data)
     // Initialize rbg values
     let totalColors = 0
     let rgbRed = 0
@@ -56,8 +55,16 @@ const Camera = () => {
     rgbGreen = Math.floor(rgbGreen / totalColors)
     rgbBlue = Math.floor(rgbBlue / totalColors)
 
-    // Update average color state
-    dispatch(updateAverageColor(rgbBlue))
+    // If the middle most node is in the blue spectrum, recursively call the function to analyze node right and node left
+    if (rgbBlue >= 120 && rgbBlue <= 225) {
+      // Update average color state
+      dispatch(updateAverageColor(rgbBlue))
+
+      // Reset x and y coordiantes to half of the 
+
+      // getAverageColor()
+    }
+
 
   }
 
@@ -70,7 +77,7 @@ const Camera = () => {
     const interval = setInterval(() => {
       const context = canvas.getContext('2d')
       context.drawImage(videoRef.current, 0, 0, screenWidth, screenWidth * .40)
-      getAverageColor(context.getImageData(initialX, initialY, 10, 10))
+      getAverageColor(context.getImageData(0, 0, screenWidth, screenWidth * .40))
     }, 1000)
     dispatch(updateInterval(interval))
   }
