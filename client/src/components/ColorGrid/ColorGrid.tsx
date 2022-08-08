@@ -1,5 +1,5 @@
 import { useAppSelector } from '../../app/hooks'
-import { selectAverageColor } from '../Camera/averageColorSlice'
+import { selectAverageColor } from '../Camera/reducers/averageColorSlice'
 import './ColorGrid.css'
 
 const ColorGrid = () => {

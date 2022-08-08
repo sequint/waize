@@ -1,5 +1,6 @@
 export { default as About } from './About/About'
 export { default as Camera } from './Camera/Camera'
+export { default as NodeGrid } from './NodeGrid/NodeGrid'
 export { default as CapturedPhoto } from './CapturedPhoto/CapturedPhoto'
 export { default as ColorGrid } from './ColorGrid/ColorGrid'
 export { default as HomeTitle } from './HomeTitle/HomeTitle'

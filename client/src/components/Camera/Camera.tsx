@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { useUserMedia } from '../../hooks'
 import { useAppDispatch } from '../../app/hooks'
-import { updateAverageColor } from './averageColorSlice'
+import { updateAverageColor } from './reducers/averageColorSlice'
 import { updateInterval } from './intervalSlice'
 import './Camera.css'
 
@@ -29,7 +29,7 @@ const Camera = () => {
   }
 
   const getAverageColor = (colors: any) => {
-    console.log(colors.data)
+    // console.log(colors.data)
     // Initialize rbg values
     let totalColors = 0
     let rgbRed = 0
