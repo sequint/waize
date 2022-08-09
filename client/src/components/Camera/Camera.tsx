@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { useUserMedia } from '../../hooks'
 import { useAppDispatch } from '../../app/hooks'
 import { updateAverageColor } from './reducers/averageColorSlice'
-import { updateInterval } from './intervalSlice'
+import { updateInterval } from './reducers/intervalSlice'
 import './Camera.css'
 
 // Set constraints for video stream from user midea data (switch to environment facing after testing)
