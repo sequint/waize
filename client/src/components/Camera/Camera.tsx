@@ -6,7 +6,7 @@ import { updateInterval } from './utils/intervalSlice'
 import './Camera.css'
 
 // Set constraints for video stream from user midea data (switch to environment facing after testing)
-const constraints = {
+const videoConstraints = {
   audio: false,
   video: { facingMode: 'environment' }
 }
@@ -14,7 +14,6 @@ const constraints = {
 const screenWidth = window.innerWidth
 
 const Camera = () => {
-  const videoConstraints = useState(constraints)
   const dispatch = useAppDispatch()
 
   // Create a video element using ref
