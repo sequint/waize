@@ -1,12 +1,12 @@
-import { useRef } from 'react'
+import { useState, useRef } from 'react'
 import { useUserMedia } from '../../hooks'
 import { useAppDispatch } from '../../app/hooks'
-import { updateAverageColor } from './reducers/averageColorSlice'
-import { updateInterval } from './reducers/intervalSlice'
+import { updateAverageColor } from './utils/averageColorSlice'
+import { updateInterval } from './utils/intervalSlice'
 import './Camera.css'
 
 // Set constraints for video stream from user midea data (switch to environment facing after testing)
-const videoConstraints = {
+const constraints = {
   audio: false,
   video: { facingMode: 'environment' }
 }
@@ -14,6 +14,7 @@ const videoConstraints = {
 const screenWidth = window.innerWidth
 
 const Camera = () => {
+  const videoConstraints = useState(constraints)
   const dispatch = useAppDispatch()
 
   // Create a video element using ref

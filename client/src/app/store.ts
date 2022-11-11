@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import capturedPhotoReducer from '../components/CapturedPhoto/capturedPhotoSlice'
-import averageColorReducer from '../components/Camera/reducers/averageColorSlice'
-import intervalReducer from '../components/Camera/reducers/intervalSlice'
+import averageColorReducer from '../components/Camera/utils/averageColorSlice'
+import intervalReducer from '../components/Camera/utils/intervalSlice'
 
 
 export const store = configureStore({

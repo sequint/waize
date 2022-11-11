@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useAppSelector } from '../../app/hooks'
-import { selectInterval } from '../Camera/reducers/intervalSlice'
+import { selectInterval } from '../Camera/utils/intervalSlice'
 import { Link } from 'react-router-dom'
 import Box from '@mui/material/Box'
 import BottomNavigation from '@mui/material/BottomNavigation'
